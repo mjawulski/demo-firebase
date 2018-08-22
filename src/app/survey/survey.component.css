@@ -1,0 +1,11 @@
+button {
+  margin: 10px;
+}
+
+.dashboard-card {
+  min-width: 200px;
+  max-width: 350px;
+  width: 100%;
+
+  margin: 30px;
+}

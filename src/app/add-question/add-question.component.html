@@ -1,0 +1,19 @@
+<form class="add-question-form">
+  <mat-form-field>
+    <input matInput placeholder="Enter question" name="question" [(ngModel)]="questionToAdd.question" autocomplete="off" />
+  </mat-form-field>
+
+  <div *ngFor="let answer of questionToAdd.answers; let i = index">
+    <mat-form-field>
+      <input matInput placeholder="Enter answer" name="answer-{{i}}" [(ngModel)]="answer.name" autocomplete="off" />
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-icon-button (click)="addAnswer()" type="button">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <button mat-raised-button (click)="addQuestion()" color="accent" [disabled]="!questionToAdd.question || (questionToAdd.answers && questionToAdd.answers.length==0)"
+    type="button">Dodaj pytanie
+  </button>
+</form>

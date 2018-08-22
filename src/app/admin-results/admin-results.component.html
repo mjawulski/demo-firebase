@@ -1,0 +1,14 @@
+<div *ngIf="afAuth.user | async as user; else showLogin">
+  <h4>Witaj {{ user.displayName }}!</h4>
+  <p *ngIf="!isAuthorized ; else displayResults">You shall not pass!</p>
+
+  <ng-template #displayResults>
+    <app-charts-grid></app-charts-grid>
+    <app-add-question></app-add-question>
+  </ng-template>
+  <button mat-raised-button (click)="logout()" class="logout-button">Logout</button>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button mat-raised-button (click)="login()">Login with Google</button>
+</ng-template>

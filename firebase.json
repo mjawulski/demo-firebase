@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "public": "dist/firebase-authentication",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

@@ -1,0 +1,16 @@
+<div>
+  <mat-card class="dashboard-card" *ngIf="currentQuestion">
+    <mat-card-header>
+      <mat-card-title>
+        {{currentQuestion.question}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="dashboard-card-content">
+      <div>
+        <button mat-raised-button color="primary" *ngFor="let answer of currentQuestion.answers" (click)="vote(answer)">{{answer.name}}</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <p *ngIf="!isNextQuestionAvailable() && !currentQuestion">Dziękuję za udział w ankiecie!</p>
+</div>
